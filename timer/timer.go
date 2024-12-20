@@ -1,7 +1,7 @@
 package timer
 
 import (
-	"fmt"
+	//"fmt"
 	"runtime"
 	"time"
 )
@@ -43,12 +43,3 @@ func MeasurePerformance(fn func()) (time.Duration, uint64, uint64) {
 // 	_ = slice // Prevent the compiler from optimizing away the slice
 // }
 
-// func main() {
-// 	// Measure the performance of the sample function
-// 	duration, allocatedMemory, totalMemory := measurePerformance(sampleFunction)
-
-// 	// Print the results
-// 	fmt.Printf("Execution time: %v\n", duration)
-// 	fmt.Printf("Allocated memory during execution: %d bytes\n", allocatedMemory)
-// 	fmt.Printf("Total memory allocated since start: %d bytes\n", totalMemory)
-// }

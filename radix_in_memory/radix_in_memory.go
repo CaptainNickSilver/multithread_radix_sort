@@ -1,15 +1,15 @@
-package main
+package radix_in_memory
 
 import (
 	"bufio"
 	"fmt"
 	"os"
 	"strconv"
-	"github.com/captainnicksilver/multithread_radix_sort/timer"
+	
 )
 
 // radixSort sorts an array of integers using the Radix Sort algorithm.
-func radixSort(arr []int) []int {
+func RadixSort(arr []int) []int {
 	max := getMax(arr)
 
 	// Perform counting sort for each digit (1's, 10's, 100's, ..., 100000's)
@@ -104,10 +104,10 @@ func writeIntegers(filename string, integers []int) error {
 	return writer.Flush()
 }
 
-func main() {
-	inputFile := "input.txt"  // Input file containing unsorted six-digit integers
-	outputFile := "sorted.txt" // Output file for sorted integers
+func Radix_in_Memory() {
 
+	var inputFile, outputFile string 
+	
 	if len(os.Args) > 2 {
 		// read the input file and output filename from the command line
 		// if the user fails to provide both, error and quit
@@ -126,7 +126,7 @@ func main() {
 	}
 
 	// Sort the integers using Radix Sort
-	sortedIntegers := radixSort(integers)
+	sortedIntegers := RadixSort(integers)
 
 	// Write the sorted integers to the output file
 	err = writeIntegers(outputFile, sortedIntegers)
